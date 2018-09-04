@@ -1,3 +1,4 @@
+
 class Human:
     def __init__(self, name, age):
         self.name = name
@@ -57,17 +58,19 @@ print(r)
 # age, for example ("David", 31), for everyone between the ages of 27 and 32,
 # inclusive.
 print("Names and ages between 27 and 32:")
-r = []  # TODO
+r = [(human.name, human.age) for human in humans if (range(27, 32))]  # TODO
 print(r)
 
 # Write a list comprehension that creates a list of new Humans like the old
 # list, except with all the names capitalized and the ages with 5 added to them.
 # The "humans" list should be unmodified.
 print("All names capitalized:")
-r = []  # TODO
+new_list = humans.copy()
+r = [(human.name.capitalize(), human.age + 5) for human in new_list]  # TODO
 print(r)
 
 # Write a list comprehension that contains the square root of all the ages.
 print("Square root of ages:")
-r = []  # TODO
+import math
+r = [math.sqrt(human.age) for human in humans]  # TODO
 print(r)
